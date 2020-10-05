@@ -1,0 +1,24 @@
+{% extends 'portfolio/base.html' %}
+
+{% block anyname %}
+
+    <h1>Amir's Portfolio</h1>
+
+    {% load static %}
+
+    <a href="{% static 'portfolio\MOSFET.pdf' %}">MOSFETs</a>
+    <img src="{% static 'portfolio\Rolex.jpg' %}" alt="My image">
+
+    {% for object in objects %}
+
+    <h1>{{ object.title }}</h1>
+    <p>{{ object.description }}</p>
+    <img src="{{ object.image.url }}">
+    {% if object.url %}
+    <br>
+    <a href='{{ object.url }}'>Link</a>
+    {% endif %}
+
+    {% endfor %}
+
+{% endblock %}

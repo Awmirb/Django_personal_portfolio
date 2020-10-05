@@ -1,0 +1,10 @@
+{% extends 'portfolio/base.html' %}
+
+{% block anyname %}
+<h1>{{ blog_page.title }}</h1>
+
+<h2>--{{ blog_page.date|date:'F jS Y' }}--</h2>
+
+<p>{{ blog_page.description|safe }}</p>
+
+{% endblock %}
